@@ -1,8 +1,6 @@
 function Tennis(A,B) {
     
-  this.start_game = function(){
-    return "Love-Love";
-  }
+  
 
 };
 
