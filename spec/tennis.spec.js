@@ -31,6 +31,8 @@ function Tennis(A,B) {
       return "Fifteen";
     } else if(this.B === 30){
       return "Thirty";
+    } else if(this.B === 40){
+      return "Forty";
     }
   }
 
