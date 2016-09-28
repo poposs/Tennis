@@ -7,21 +7,24 @@ function Tennis(A,B) {
     return "Love-Love";
   }
   this.AgetScore = function(){
-
-    if(this.A === 0){
-      score = "Love-";
-      score += this.BgetScore();
-    } else if(this.A === 15){
-      score = "Fifteen-";
-      score += this.BgetScore();
-    } else if(this.A === 30){
-      score = "Thirty-";
-      score += this.BgetScore();
-    } else if(this.A === 40){
-      score = "Forty-";
-      score += this.BgetScore();
-    } else if(this.A > 40) {
-      score = "Player A Won!!!"; 
+    if(this.B <= 40){
+      if(this.A === 0){
+        score = "Love-";
+        score += this.BgetScore();
+      } else if(this.A === 15){
+        score = "Fifteen-";
+        score += this.BgetScore();
+      } else if(this.A === 30){
+        score = "Thirty-";
+        score += this.BgetScore();
+      } else if(this.A === 40){
+        score = "Forty-";
+        score += this.BgetScore();
+      } else if(this.A > 40) {
+        score = "Player A Won!!!";
+      }
+    } else {
+      score = this.BgetScore();
     }
     return score;
   }
@@ -35,6 +38,8 @@ function Tennis(A,B) {
       return "Thirty";
     } else if(this.B === 40){
       return "Forty";
+    } else if(this.B > 40){
+      return "Player B Won!!!";
     }
   }
 
@@ -75,19 +80,11 @@ describe("Tennis()", function() {
     var echoScore = new Tennis(0,40);
     expect(echoScore.AgetScore()).toBe('Love-Forty');
   });
-<<<<<<< HEAD
-    it('should be "Player A Won" when Player A get over score 40-0', function() {
-=======
-  it('should be "Love-Forty" when B get score 0-40', function() {
-  var echoScore = new Tennis(0,40);
-  expect(echoScore.AgetScore()).toBe('Love-Forty');
-  });
-  it('should be "Player A Win" when Player A get score 0-40', function() {
->>>>>>> e93401b49ca7c27f2180f2da414c779ae498e7a8
+  it('should be "Player A Win" when Player A get over score 0-40', function() {
   var echoScore = new Tennis(45,0);
   expect(echoScore.AgetScore()).toBe('Player A Won!!!');
   });
-     it('should be "Player B Won" when Player B get over score 0-40', function() {
+  it('should be "Player B Won" when Player B get over score 0-40', function() {
   var echoScore = new Tennis(0,45);
   expect(echoScore.AgetScore()).toBe('Player B Won!!!');
   });
