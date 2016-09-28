@@ -45,4 +45,8 @@ describe("Tennis()", function() {
     var echoScore = new Tennis(30,0);
     expect(echoScore.AgetScore()).toBe('Thirty-Love');
   });
+    it('should be "Forty-Love" when A get score 30-0', function() {
+    var echoScore = new Tennis(40,0);
+    expect(echoScore.AgetScore()).toBe('Forty-Love');
+  });
 });
