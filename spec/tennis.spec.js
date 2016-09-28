@@ -73,8 +73,12 @@ describe("Tennis()", function() {
     var echoScore = new Tennis(0,40);
     expect(echoScore.AgetScore()).toBe('Love-Forty');
   });
-    it('should be "Player A Wo n" when Player A get score 0-40', function() {
+    it('should be "Player A Won" when Player A get over score 40-0', function() {
   var echoScore = new Tennis(45,0);
   expect(echoScore.AgetScore()).toBe('Player A Won!!!');
+  });
+     it('should be "Player B Won" when Player B get over score 0-40', function() {
+  var echoScore = new Tennis(0,45);
+  expect(echoScore.AgetScore()).toBe('Player B Won!!!');
   });
 });
