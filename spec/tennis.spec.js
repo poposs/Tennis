@@ -8,7 +8,10 @@ function Tennis(A,B) {
   }
   this.AgetScore = function(){
 
-    if(this.A === 15){
+    if(this.A === 0){
+      score = "Love-";
+      score += this.BgetScore();
+    } else if(this.A === 15){
       score = "Fifteen-";
       score += this.BgetScore();
     } else if(this.A === 30){
@@ -24,6 +27,8 @@ function Tennis(A,B) {
   this.BgetScore = function() {
     if(this.B === 0){
       return "Love";
+    } else if(this.B === 15){
+      return "Fifteen";
     }
   }
 
