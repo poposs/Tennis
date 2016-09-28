@@ -11,6 +11,9 @@ function Tennis(A,B) {
     if(this.A === 15){
       score = "Fifteen-";
       score += this.BgetScore();
+    } else if(this.A === 30){
+      score = "Thirty-";
+      score += this.BgetScore();
     }
     return score;
   }
@@ -34,11 +37,11 @@ describe("Tennis()", function() {
     expect(echoScore.start_game()).toBe('Love-Love');
   });
 
-  it('should be "Fifteen-Love" when A get score', function() {
+  it('should be "Fifteen-Love" when A get score 15-0', function() {
     var echoScore = new Tennis(15,0);
     expect(echoScore.AgetScore()).toBe('Fifteen-Love');
   });
-   it('should be "Thirty-Love" when A get score', function() {
+   it('should be "Thirty-Love" when A get score 30-0', function() {
     var echoScore = new Tennis(30,0);
     expect(echoScore.AgetScore()).toBe('Thirty-Love');
   });
