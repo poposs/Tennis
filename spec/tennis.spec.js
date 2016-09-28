@@ -29,6 +29,8 @@ function Tennis(A,B) {
       return "Love";
     } else if(this.B === 15){
       return "Fifteen";
+    } else if(this.B === 30){
+      return "Thirty";
     }
   }
 
@@ -57,11 +59,11 @@ describe("Tennis()", function() {
     var echoScore = new Tennis(40,0);
     expect(echoScore.AgetScore()).toBe('Forty-Love');
   });
-     it('should be "Love-Fifteen" when B get score 0-15', function() {
+    it('should be "Love-Fifteen" when B get score 0-15', function() {
     var echoScore = new Tennis(0,15);
     expect(echoScore.AgetScore()).toBe('Love-Fifteen');
   });
-       it('should be "Love-Thirty" when B get score 0-30', function() {
+    it('should be "Love-Thirty" when B get score 0-30', function() {
     var echoScore = new Tennis(0,30);
     expect(echoScore.AgetScore()).toBe('Love-Thirty');
   });
