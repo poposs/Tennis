@@ -20,6 +20,8 @@ function Tennis(A,B) {
     } else if(this.A === 40){
       score = "Forty-";
       score += this.BgetScore();
+    } else if(this.A > 40) {
+      score = "Player A Won!!!"; 
     }
     return score;
   }
@@ -73,7 +75,11 @@ describe("Tennis()", function() {
     var echoScore = new Tennis(0,40);
     expect(echoScore.AgetScore()).toBe('Love-Forty');
   });
-    it('should be "Player A Wo n" when Player A get score 0-40', function() {
+  it('should be "Love-Forty" when B get score 0-40', function() {
+  var echoScore = new Tennis(0,40);
+  expect(echoScore.AgetScore()).toBe('Love-Forty');
+  });
+  it('should be "Player A Win" when Player A get score 0-40', function() {
   var echoScore = new Tennis(45,0);
   expect(echoScore.AgetScore()).toBe('Player A Won!!!');
   });
